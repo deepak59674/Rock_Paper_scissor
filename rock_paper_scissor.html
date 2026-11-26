@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        body{margin: 0;padding: 0; max-height: 100vh;display: flex;flex-direction: column;background:linear-gradient(90deg,rgb(255, 102, 0),rgb(238, 109, 195),rgb(103, 103, 231));background-repeat: no-repeat;background-attachment: fixed;}
+        .imn1,.imn2,.imn3{height: 430px;width: 400px;}
+        #game{display: flex;justify-content: space-between;}
+       .deep{display: flex;flex-direction: column;align-items: center;gap: 10px;}
+        button{height: 35px;width: 150px;background:linear-gradient(45deg,rgb(255, 123, 0),blue);font-size: 20px;font-weight: bold;box-shadow: 5px 5px 3px;}
+        .count{display: flex;margin-top: 20px;margin-left: 50px;justify-content: space-around;}
+        @media(max-width:978px)
+        {
+             .imn1,.imn2,.imn3{height: 300px;width: 250px;}
+        }
+        @media(max-width:686px)
+        {
+             .imn1,.imn2,.imn3{height: 250px;width: 200px;}
+        }
+         @media(max-width:594px)
+        {
+             .imn1,.imn2,.imn3{height: 220px;width: 180px;}
+             .count{margin-top: 10px;}
+        }
+        @media(max-width:446px)
+        {
+             .imn1,.imn2,.imn3{height: 160px;width: 140px;}
+             .count{margin-top: px;}
+             .deep,.count{font-size: 12px ;}
+        }
+        @media(max-width:348px)
+        {
+             .imn1,.imn2,.imn3{height: 100px;width: 120px;}
+             
+             .count{font-size: 10px ;}
+             .deep{font-size: 10px;}
+             #result{font-size: 15px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <img src="./rock1.png" alt="" class="imn1" id="rock">
+  <img src="./paper1.png" alt="" class="imn2" id="paper">
+    <img src="./scissor1.png" alt="" class="imn3" id="scissor">
+</div>
+<div class="count">
+    <h2 id="comp">Computer count</h2>
+     <h2 id="your">Your count</h2>
+     
+</div>
+    <div class="deep">
+        <h2 id="computer">Computer choosed</h2>
+   <h1 id="result">Result</h1>
+   <button id="refresh">Refresh</button>
+    
+   </div>
+   <script src="./rock_paper_scissor.js"></script>
+</body>
+</html>
