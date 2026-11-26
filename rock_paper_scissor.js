@@ -1,6 +1,27 @@
 let county=0;
 let countc=0
 
+function celebrateWin() {
+    const container = document.getElementById("flower-container");
+    const flowers = ["🌸", "🌺", "🌼", "🌻", "💮", "🌷","🌸", "🌺", "🌼", "🌻", "💮", "🌷"];
+    for (let i = 0; i < 40; i++) {
+        const flower = document.createElement("span");
+        flower.classList.add("flower");
+        flower.innerHTML = flowers[
+            Math.floor(Math.random() * flowers.length)
+        ];
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+        flower.style.animationDelay =
+            Math.random() * 1.5 + "s";
+       container.appendChild(flower);
+        setTimeout(() => {
+            flower.remove();
+        }, 5000);
+    }
+}
+
 function updatescore()
 {
   document.getElementById("comp").innerHTML="Computer count = "+`${countc}`
@@ -27,7 +48,7 @@ const printer=(event)=>{
   { county++;
     updatescore()
     result.innerHTML="Result : "+" YOU WIN"
-   
+   celebrateWin()
     computertext.innerHTML='Computer choose - '+ `${computer[z]}`
      game.removeEventListener('click',printer)
     
@@ -53,13 +74,5 @@ refresh.addEventListener('click',(event)=>{
     computertext.innerHTML='Computer choose '+ ``
     game.addEventListener('click',printer)
 })
-
-// yha z ko event listener ke under likha hai taki ye hmesha loop chlne pr change hota rhe
-// sabse phle game pr event listener lgaya line 47
-// phir sari if else ki condition likhi
-// phir game ke event listener ko printer me store kraya taki hm remove event listener lga ske jo ki ek br click krne pr dubara click krne pr  value ko change nhi krega
-// uske bad game ko refresh krne ke liye refresh pr event listener lagaya 
-// phir refresh h jay to result,computer text ka inner khali ho jay 
-// aur phir se game pr event listner lgya taki phir se game start ho ske
 
 
